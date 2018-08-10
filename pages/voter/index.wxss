@@ -1,0 +1,61 @@
+/**index.wxss**/
+page {
+  color: #fff;
+}
+.nodes-text {
+  padding-left: 30rpx;
+  color: #89949E;
+  font-size: 22rpx;
+  line-height: 30rpx;
+}
+.nodes-title {
+  padding-left: 30rpx;
+  padding-bottom: 30rpx;
+  font-size: 58rpx;
+  line-height: 81rpx;
+}
+.nodes-subtitle {
+  padding-left: 30rpx;
+  padding-top: 10rpx;
+  font-size: 30rpx;
+  line-height: 53rpx;
+}
+
+.ranking {
+  padding-top: 50rpx;
+  text-align: center;
+}
+.ranking .title {
+  padding: 0 20rpx;
+  color: #89949E;
+  font-size: 30rpx;
+  line-height: 68rpx;
+  text-align: left;
+  background-color: #1B242F;
+}
+.ranking .rank-title {
+  padding: 30rpx 20rpx;
+  color: #89949E;
+  font-size: 22rpx;
+  line-height: 30rpx;
+}
+.ranking .rank-prec {
+  width: 110rpx;
+  padding-right: 10rpx;
+}
+.ranking .rank-item {
+  padding: 24rpx 20rpx;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  border-top: 1rpx solid #3D5168;
+}
+.ranking .rank-name {
+  width: 220rpx;
+}
+.ranking .rank-index {
+  width: 60rpx;
+}
+.ranking .rank-item .rank-name {
+  color: var(--main-color);
+  font-weight: bold;
+}

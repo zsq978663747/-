@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/nodes/index",
+    "pages/voter/index"
+  ],
+  "window":{
+    "backgroundColor": "#151D27",
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#151D27",
+    "navigationBarTitleText": "柚子节点排行",
+    "navigationBarTextStyle":"#fff",
+    "enablePullDownRefresh": true
+  }
+}

@@ -1,0 +1,71 @@
+<!--index.wxml-->
+<view>
+  <view class='info flex justify-between'>
+    <view class='text'>总投票</view>
+    <view class='count'>{{totalStake}} EOS</view>
+  </view>
+  <view class='progress'>
+    <view class='bar' style='width: {{rankWidth}}%;'>
+       <view class='prec' wx:if="{{currentPerc < 9}}">{{currentPerc}}%</view> 
+       <view class='prec-right' wx:else>{{currentPerc}}%</view> 
+    </view>
+    <view class='tips flex justify-between'>
+      <text>votes</text>
+      <text>15% 投票已完成</text>
+    </view>
+  </view>
+  <view class='recommend' wx:if="{{0}}">
+    <view class='title'>中国节点推荐</view>
+    <view class='list flex justify-between'>
+      <view>
+        <image src='/images/store@2x.png' mode='aspectFit'></image>
+        <view>Store</view>
+      </view>
+      <view>
+        <image src='/images/cannon@2x.png' mode='aspectFit'></image>
+        <view>Cannon</view>
+      </view>
+      <view>
+        <image src='/images/huobi@2x.png' mode='aspectFit'></image>
+        <view>Houbi</view>
+      </view>
+      <view>
+        <image src='/images/beijing@2x.png' mode='aspectFit'></image>
+        <view>Beijing</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='ranking'>
+    <view class='title'>生产节点</view>
+    <view class='rank-title flex justify-between'>
+      <view class='rank-index flex-none'>序号</view>
+      <view class='rank-name flex-none'>名字</view>
+      <view class='rank-count flex-grow'>总票数 (≈)</view>
+      <view class='rank-prec flex-none'>百分比</view>
+    </view>
+    <block wx:for="{{rankList}}" wx:key="{{index}}" wx:if="{{index < 21}}">
+      <view class='rank-item flex justify-between' data-nodes='{{item.owner}}' data-index='{{index}}' catchtap='onPageNodes'>
+        <view class='rank-index flex-none'>{{index + 1}}</view>
+        <view class='rank-name flex-none'>{{item.owner}}</view>
+        <view class='rank-count flex-grow'>{{item.votes}}</view>
+        <view class='rank-prec flex-none'>{{item.rate}}%</view>
+      </view>
+    </block>
+    <view class='title mt20'>候选节点</view>
+    <view class='rank-title flex justify-between'>
+      <view class='rank-index flex-none'>序号</view>
+      <view class='rank-name flex-none'>名字</view>
+      <view class='rank-count flex-grow'>总票数 (≈)</view>
+      <view class='rank-prec flex-none'>百分比</view>
+    </view>
+    <block wx:for="{{rankList}}" wx:key="{{index}}" wx:if="{{index >= 21}}">
+      <view class='rank-item flex justify-between' data-nodes='{{item.owner}}' data-index='{{index}}' catchtap='onPageNodes'>
+        <view class='rank-index flex-none'>{{index + 1}}</view>
+        <view class='rank-name flex-none'>{{item.owner}}</view>
+        <view class='rank-count flex-grow'>{{item.votes}}</view>
+        <view class='rank-prec flex-none'>{{item.rate}}%</view>
+      </view>
+    </block>
+  </view>
+</view>

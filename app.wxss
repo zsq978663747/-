@@ -1,0 +1,129 @@
+form,
+image {
+  display: block;
+}
+
+button {
+  margin: 0;
+}
+
+button::after {
+  border-width: 0;
+}
+
+.button-hover{
+  opacity: 0.8;
+}
+
+page {
+  font-family: "Helvetica Neue",
+             Helvetica,
+             Arial,
+             "PingFang SC",
+             "Hiragino Sans GB",
+             "Heiti SC",
+             "Microsoft YaHei",
+             "WenQuanYi Micro Hei",
+             sans-serif;
+  position: relative;
+
+  --main-color: #02B9EE;
+  --font-color: #A1A1AD;
+  --title-color: #89949E;
+  --bg-color: #151D27;
+
+  background-color: var(--bg-color);
+}
+
+/* flex START */
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex.rl {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.flex.tb {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex.bt {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.flex.wrap {
+  flex-wrap: wrap;
+}
+
+.flex.nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex.justify-center {
+  justify-content: center;
+}
+
+.flex.justify-start {
+  justify-content: flex-start;
+}
+
+.flex.justify-end {
+  justify-content: flex-end;
+}
+
+.flex.justify-between {
+  justify-content: space-between;
+}
+
+.flex.justify-around {
+  justify-content: space-around;
+}
+
+.flex.align-center {
+  align-items: center;
+}
+
+.flex.align-start {
+  align-items: flex-start;
+}
+
+.flex.align-end {
+  align-items: flex-end;
+}
+
+.flex.self-align-center {
+  margin: 0 auto;
+  align-self: center;
+}
+
+.flex.self-align-start {
+  align-self: flex-start;
+}
+
+.flex.self-align-end {
+  align-self: flex-end;
+}
+
+.flex.self-align-stretch {
+  align-self: stretch;
+}
+
+/* flex => item */
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-shrink {
+  flex-shrink: 0;
+}
+
+.flex-none {
+  flex: none;
+}
+/* flex END */

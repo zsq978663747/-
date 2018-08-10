@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view>
+  <view class='nodes-text'>投票用户</view>
+  <view class='nodes-title'>{{nodesName}}</view>
+  <view class='nodes-text'>持有EOS数</view>
+  <view class='nodes-subtitle'>{{staked}}</view>
+
+  <view class='ranking'>
+    <view class='title flex justify-between'>
+      <view>投票节点</view>
+      <view>{{producers.length}}个</view>
+    </view>
+    <view class='rank-title flex justify-between'>
+      <view class='rank-index flex-none'>序号</view>
+      <view class='rank-name flex-none'>节点名字</view>
+      <view class='rank-count flex-grow'>总票数</view>
+      <view class='rank-prec flex-none'>百分比</view>
+    </view>
+    <block wx:for="{{producers}}" wx:key="{{index}}">
+      <view class='rank-item flex justify-between' data-nodes='{{item.owner}}'>
+        <view class='rank-index flex-none'>{{index + 1}}</view>
+        <view class='rank-name flex-none'>{{item.producer_name}}</view>
+        <view class='rank-count flex-grow'>{{item.total_eos}}</view>
+        <view class='rank-prec flex-none'>{{item.pecent}}%</view>
+      </view>
+    </block>
+  </view>
+</view>

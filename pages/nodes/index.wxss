@@ -1,0 +1,91 @@
+/**index.wxss**/
+page {
+  color: #fff;
+}
+.nodes-text {
+  padding-left: 30rpx;
+  color: #89949E;
+  font-size: 22rpx;
+  line-height: 30rpx;
+}
+.nodes-info {
+  padding: 0 30rpx 30rpx;
+  line-height: 81rpx;
+}
+.nodes-info .left {
+  font-size: 58rpx;
+}
+.nodes-info .text-rank {
+  color: #89949E;
+  font-size: 22rpx;
+}
+.nodes-info .text-num {
+  padding-left: 20rpx;
+  font-size: 38rpx;
+}
+.nodes-msg {
+  padding: 33rpx 30rpx 41rpx;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 30rpx;
+  line-height: 42rpx;
+  text-align: center;
+}
+.nodes-msg .bottom {
+  padding-top: 10rpx;
+  color: #89949E;
+  font-size: 22rpx;
+  line-height: 30rpx;
+}
+
+.ranking {
+  padding-top: 50rpx;
+  text-align: center;
+}
+.ranking .title {
+  padding: 0 20rpx;
+  font-size: 30rpx;
+  line-height: 68rpx;
+  text-align: left;
+  background-color: #1B242F;
+}
+.ranking .rank-title {
+  padding: 30rpx 20rpx;
+  color: #89949E;
+  font-size: 22rpx;
+  line-height: 30rpx;
+}
+.ranking .rank-prec {
+  width: 110rpx;
+}
+.ranking .rank-item {
+  padding: 24rpx 20rpx;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  border-top: 1rpx solid #3D5168;
+}
+.ranking .rank-name {
+  width: 220rpx;
+}
+.ranking .rank-index {
+  width: 60rpx;
+}
+.ranking .rank-item .rank-name {
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+.tab-item {
+  margin-left: 40rpx;
+}
+.cur {
+  position: relative;
+  color: #02C9EE;
+}
+.cur:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -18rpx;
+  border-top: 4rpx solid #02C9EE;
+}

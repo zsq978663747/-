@@ -1,0 +1,67 @@
+<!--index.wxml-->
+<view>
+  <view class='nodes-text'>节点名</view>
+  <view class='nodes-info flex justify-between'>
+    <view class='left' catchtap='onTapShow' data-type="node">{{owner}}</view>
+    <view class='right flex align-center' catchtap='onTapShow' data-type="rank">
+      <text class='text-rank'>总排名</text>
+      <text class='text-num'>{{index}}</text>
+    </view>
+  </view>
+  <view class='nodes-msg flex justify-around'>
+    <view>
+      <view>{{producer.totalVotes}}</view>
+      <view class='bottom'>总票数</view>
+    </view>  
+    <view>
+      <view>{{producer.totalVoter}}</view>
+      <view class='bottom'>投票者</view>
+    </view>
+    <view>
+      <view wx:if="{{producer.percent}}">{{producer.percent}}%</view>
+      <view class='bottom'>投票百分比</view>
+    </view>
+  </view>
+
+  <view class='ranking'>
+    <view class='title'>
+      <text 
+        class="{{(showTabs && tabId== 0) ? 'cur' : ''}}" 
+        catchtap='onTabs' data-tab="0">投票用户</text>
+      <text class="tab-item {{tabId==1 ? 'cur' : ''}}" catchtap='onTabs' data-tab="1" wx:if="{{showTabs}}">撤票用户</text>
+    </view>
+    <block wx:if="{{tabId == 0}}">
+      <view class='rank-title flex justify-between'>
+        <view class='rank-index flex-none'>序号</view>
+        <view class='rank-name flex-none'>投票者账号</view>
+        <view class='rank-count flex-grow'>持有EOS量 (≈)</view>
+        <view class='rank-prec flex-none'>投节点数</view>
+      </view>
+      <block wx:for="{{rankList}}" wx:key="{{index}}">
+        <view class='rank-item flex justify-between' data-nodes='{{item[0]}}' catchtap='onPageVoter'>
+          <view class='rank-index flex-none'>{{index + 1}}</view>
+          <view class='rank-name flex-none'>{{item[0]}}</view>
+          <view class='rank-count flex-grow'>{{item[1]}}</view>
+          <view class='rank-prec flex-none'>{{item[2]}}</view>
+        </view>
+      </block>
+    </block>
+    <block wx:if="{{tabId == 1}}">
+      <view class='rank-title flex justify-between'>
+        <view class='rank-index flex-none'>序号</view>
+        <view class='rank-name flex-none'>撤票者账号</view>
+        <view class='rank-count flex-grow'>撤票数 (≈)</view>
+         <!-- <view class='rank-prec flex-none'>撤节点数</view>  -->
+        <view class='rank-prec flex-none'>时间</view>
+      </view>
+      <block wx:for="{{rankList}}" wx:key="{{index}}">
+        <view class='rank-item flex justify-between' data-nodes='{{item[0]}}' catchtap='onPageVoter'>
+          <view class='rank-index flex-none'>{{index + 1}}</view>
+          <view class='rank-name flex-none'>{{item[0]}}</view>
+          <view class='rank-count flex-grow'>{{item[1]}}</view>
+          <view class='rank-prec flex-none'>{{item[2]}}</view>
+        </view>
+      </block>
+    </block>
+  </view>
+</view>
